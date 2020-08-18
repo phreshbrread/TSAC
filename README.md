@@ -17,10 +17,10 @@ Shapes it works on:
 - Removed unnesessary references.
 
 ### v2
-- Added Square-Based Pyramid calculator
+- Added Square-Based Pyramid calculator.
 
 ### v1
-- Initial upload
+- Initial upload.
 
 ## Todo
 - Add a "show formula" option
