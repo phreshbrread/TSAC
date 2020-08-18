@@ -9,8 +9,12 @@ Shapes included:
 
 ## Changelog
 
+### v2.1
+- Fixed the incorrect formula for cylinders.
+- Removed unnesessary references.
+
 ### v2
--  Added Square-Based Pyramid calculator
+- Added Square-Based Pyramid calculator
 
 ### v1
 - Initial upload
