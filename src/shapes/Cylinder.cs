@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TSAC
 {
@@ -17,7 +13,7 @@ namespace TSAC
             Console.Write("Input Height: ");
             double height = Convert.ToDouble(Console.ReadLine());
 
-            double cylinderTSA = (2 * Math.PI + radius) + (2 * Math.PI * radius * height);
+            double cylinderTSA = 2 * Math.PI * radius * (height + radius);
 
             Console.WriteLine("Cylinder TSA = " + cylinderTSA);
             Console.ReadKey();
