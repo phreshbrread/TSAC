@@ -11,6 +11,9 @@ Shapes it works on:
 - I don't wanna have to go to the website and fine what I'm looking for every time, plus, I haven't made anything in C# recently and I felt like doing something useful.
 
 ## Changelog
+### v2.2
+- Fixed the incorrect formula for cylinders.
+- Removed unnesessary references.
 
 ### v2.1
 - Fixed the incorrect formula for cylinders.
@@ -23,5 +26,5 @@ Shapes it works on:
 - Initial upload.
 
 ## Todo
-- Add a "show formula" option
 - Add exception handling
+- Optimise more if I can
