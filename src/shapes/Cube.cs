@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace TSAC.src
+namespace TSAC
 {
     class Cube
     {
@@ -8,11 +8,16 @@ namespace TSAC.src
         {
             Program program = new Program();
 
+            Console.Clear();
+            Console.WriteLine("Cube");
+            Console.WriteLine("");
+
             Console.Write("Input Side Length: ");
             double sideLength = Convert.ToDouble(Console.ReadLine());
 
             double cubeTSA = 6 * Math.Pow(sideLength, 2);
 
+            Console.WriteLine("6 x (" + sideLength + " x " + sideLength + ")");
             Console.WriteLine("Cube TSA = " + cubeTSA);
             Console.ReadKey();
 

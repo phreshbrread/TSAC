@@ -1,6 +1,4 @@
 ﻿using System;
-using TSAC.src;
-using TSAC.src.shapes;
 
 namespace TSAC
 {
@@ -25,7 +23,7 @@ namespace TSAC
             Console.WriteLine("1. Cube");
             Console.WriteLine("2. Rectangle");
             Console.WriteLine("3. Cylinder");
-            Console.WriteLine("4. Square Based Pyramid");
+            Console.WriteLine("4. Square-Based Pyramid");
 
             var input = Console.ReadLine();
             if (input == "1")
