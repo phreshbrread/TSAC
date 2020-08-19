@@ -26,5 +26,5 @@ Shapes it works on:
 - Initial upload.
 
 ## Todo
-- Add a "show formula" option
 - Add exception handling
+- Optimise more if I can
