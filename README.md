@@ -1,5 +1,4 @@
 # TSAC
 Originally a Total Surface Area calculator for a few 3D shapes, now also does Area, Perimeter and Volume
 
-"Why even bother making this when there are websites that do it better?"
-- Simply because I'm waiting for the one day where a maths teacher will say "No calculators unless you make one yourself"
+Also I know this is pointless since there are many better online sites to do the same thing.
