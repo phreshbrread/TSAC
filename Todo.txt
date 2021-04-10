@@ -1,2 +1,0 @@
-﻿- TSA for Triangular Prism
-- Add exception handling
