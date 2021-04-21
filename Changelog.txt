@@ -1,4 +1,8 @@
-﻿V5.0 - 30/08/2020
+﻿V6.0 - 21/04/2021
+- Added Rectangle-Based Pyramid TSA.
+- Added Cone TSA.
+
+V5.0 - 30/08/2020
 - Added Square-Based Pyramid Volume.
 - Added Cylinder Sector TSA.
 - Added Sphere Volume and TSA.
