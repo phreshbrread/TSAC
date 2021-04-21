@@ -23,16 +23,22 @@ namespace TSAC
                     SBP();
                     break;
                 case 10:
-                    Cylinder();
+                    RBP();
                     break;
                 case 11:
-                    CylinderSector();
+                    Cylinder();
                     break;
                 case 12:
-                    Sphere();
+                    CylinderSector();
                     break;
                 case 13:
+                    Sphere();
+                    break;
+                case 14:
                     Hemisphere();
+                    break;
+                case 15:
+                    Cone();
                     break;
                 default:
                     program.OptionUnavailable();
@@ -88,7 +94,7 @@ namespace TSAC
             Exit();
         }
 
-        void SBP()
+        void SBP() //Square-Based Pyramid
         {
             Console.Write("Trianglular Face Height: ");
             double tfHeight = Convert.ToDouble(Console.ReadLine());
@@ -99,6 +105,23 @@ namespace TSAC
 
             Console.WriteLine("(4 x (" + baseWidth + " x " + tfHeight + ") / 2)" + " + " + "(" + baseWidth + " x " + baseWidth + ")");
             Console.WriteLine("SBP TSA = " + sbpTSA);
+
+            Exit();
+        }
+
+        void RBP() //Rectangle-Based Pyramid
+        {
+            Console.Write("Rectangular Base: ");
+            double lw = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Front / Back Triangle Areas: ");
+            double lh = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Side Traingle Areas: ");
+            double wh = Convert.ToDouble(Console.ReadLine());
+
+            double rbpTSA = lw + lh + wh;
+
+            Console.WriteLine(lw + " + " + lh + " + " + wh);
+            Console.WriteLine("RBP TSA = " + rbpTSA);
 
             Exit();
         }
@@ -158,6 +181,21 @@ namespace TSAC
 
             Console.WriteLine("(4 x Pi x " + radius + "\xB2) / 2");
             Console.WriteLine("Sphere Volume = " + hemiTSA);
+
+            Exit();
+        }
+
+        void Cone()
+        {
+            Console.Write("Base Radius: ");
+            double radius = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Slant Height: ");
+            double slant = Convert.ToDouble(Console.ReadLine());
+
+            double coneTSA = (Math.PI * (Math.Pow(radius, 2))) + (Math.PI * radius * slant);
+
+            Console.WriteLine("(Pi * (" + radius +  " * " + radius + ") + Pi" + " * " + radius + " * " + slant);
+            Console.WriteLine("Cone TSA = " + coneTSA);
 
             Exit();
         }
