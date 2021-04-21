@@ -24,7 +24,7 @@ namespace TSAC
             Console.WriteLine("Select shape");
             Console.WriteLine();
 
-            int num1 = 14;
+            int num1 = 16;
             string[] shapes = new string[num1];
 
             // 2D Shapes
@@ -39,10 +39,13 @@ namespace TSAC
             shapes[7] = "Rectangular Prism";
             shapes[8] = "Triangular Prism";
             shapes[9] = "Square-Based Pyramid";
-            shapes[10] = "Cylinder";
-            shapes[11] = "Cylinder Sector";
-            shapes[12] = "Sphere";
-            shapes[13] = "Hemisphere";
+            shapes[10] = "Rectangle-Based Pyramid";
+            shapes[11] = "Cylinder";
+            shapes[12] = "Cylinder Sector";
+            shapes[13] = "Sphere";
+            shapes[14] = "Hemisphere";
+            shapes[15] = "Cone";
+            
 
             // Show menu options
             for (int i = 1; i < num1; i++)
