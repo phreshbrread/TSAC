@@ -1,4 +1,4 @@
-﻿V6.0 - 21/04/2021
+﻿V5.1 - 21/04/2021
 - Added Rectangle-Based Pyramid TSA.
 - Added Cone TSA.
 
