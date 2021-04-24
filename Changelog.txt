@@ -1,4 +1,4 @@
-﻿V5.2 - 24/04/2021
+﻿V6 - 24/04/2021
 - Added Rectangle-Based Pyramid Volume.
 - Added Cone Volume.
 - Added Triangular Prism TSA, not sure if it's correct though.
