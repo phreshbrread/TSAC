@@ -2,7 +2,7 @@
 
 namespace TSAC
 {
-    class TSA
+    class TSA //3D Operation
     {
         public void Main(int shape)
         {
@@ -16,9 +16,9 @@ namespace TSAC
                 case 7:
                     RectPrism();
                     break;
-                /*case 8:
+                case 8:
                     TriPrism();
-                    break;*/
+                    break;
                 case 9:
                     SBP();
                     break;
@@ -46,7 +46,7 @@ namespace TSAC
             }
         }
 
-        #region Shapes
+        #region Objects
         void Cube()
         {
             Console.Write("Side Length: ");
@@ -79,17 +79,26 @@ namespace TSAC
 
         void TriPrism()
         {
-            Console.Write("Width: ");
-            double width = Convert.ToDouble(Console.ReadLine());
-            Console.Write("Height: ");
-            double height = Convert.ToDouble(Console.ReadLine());
-            Console.Write("Depth: ");
-            double depth = Convert.ToDouble(Console.ReadLine());
+            // Not sure if this is actually correct
 
-            double triTSA = (2 * width * height) + (2 * height * depth) + (2 * width * depth);
+            // TSA = bh + 2ls + lb
 
-            Console.WriteLine("(2 x " + width + " x " + height + ")" + " + " + "(2 x " + height + " x " + depth + ")" + " + " + "(2 x " + width + " x " + depth + ")");
-            Console.WriteLine("Rectangle TSA = " + triTSA);
+            Console.WriteLine("Not sure if this actually gets the correct answer yet.");
+            Console.WriteLine();
+
+            Console.Write("Triangular Face Base: ");
+            double b = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Triangular Face Height: ");
+            double h = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Object Length / Depth: ");
+            double l = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Triangular Face Slant: ");
+            double s = Convert.ToDouble(Console.ReadLine());
+
+            double triTSA = (b * h) + (2 * l * s) + (l * b);
+
+            Console.WriteLine("(" + b + " * "  +  h + ") + (2" + " * " + l + " * " + s + ") + (" + l + " * " + b + ")");
+            Console.WriteLine("Triangular Prism TSA = " + triTSA);
 
             Exit();
         }
@@ -135,7 +144,7 @@ namespace TSAC
 
             double cylinderTSA = 2 * Math.PI * radius * (height + radius);
 
-            Console.WriteLine("2 x Pi x " + radius + " x " + "(" + height + " x " + radius + ")");
+            Console.WriteLine("2 x " + "\x03C0" + " x " + radius + " x " + "(" + height + " x " + radius + ")");
             Console.WriteLine("Cylinder TSA = " + cylinderTSA);
 
             Exit();
@@ -153,7 +162,7 @@ namespace TSAC
             double diameter = radius * 2;
             double sectTSA = (2 * (angle/360) * Math.PI * Math.Pow(radius, 2)) + ((angle/360) * Math.PI * diameter * height) + (2 * height * radius);
 
-            Console.WriteLine("(2 x (" + angle + " / 360) x Pi x " + radius + "²)" + " + " + "(" + angle + " / 360) x Pi x " + diameter + " x " + height + ")" + " + " + "(2 x " + height + " x " + radius + ")");
+            Console.WriteLine("(2 x (" + angle + " / 360) x " + "\x03C0" + " x " + radius + "²)" + " + " + "(" + angle + " / 360) x " + "\x03C0" + " x " + diameter + " x " + height + ")" + " + " + "(2 x " + height + " x " + radius + ")");
             Console.WriteLine("Sector TSA = " + sectTSA);
 
             Exit();
@@ -166,7 +175,7 @@ namespace TSAC
 
             double sphereTSA = 4 * Math.PI * Math.Pow(radius, 2);
 
-            Console.WriteLine("4 x Pi x " + radius + "\xB2");
+            Console.WriteLine("4 x " + "\x03C0" + " x " + radius + "\xB2");
             Console.WriteLine("Sphere Volume = " + sphereTSA);
 
             Exit();
@@ -179,7 +188,7 @@ namespace TSAC
 
             double hemiTSA = (4 * Math.PI * Math.Pow(radius, 2)) / 2;
 
-            Console.WriteLine("(4 x Pi x " + radius + "\xB2) / 2");
+            Console.WriteLine("(4 x " + "\x03C0" + " x " + radius + "\xB2) / 2");
             Console.WriteLine("Sphere Volume = " + hemiTSA);
 
             Exit();
@@ -194,7 +203,7 @@ namespace TSAC
 
             double coneTSA = (Math.PI * (Math.Pow(radius, 2))) + (Math.PI * radius * slant);
 
-            Console.WriteLine("(Pi * (" + radius +  " * " + radius + ") + Pi" + " * " + radius + " * " + slant);
+            Console.WriteLine("(" + "\x03C0" + " * (" + radius + "\xB2" + ")) + " + "\x03C0" + " * " + radius + " * " + slant);
             Console.WriteLine("Cone TSA = " + coneTSA);
 
             Exit();

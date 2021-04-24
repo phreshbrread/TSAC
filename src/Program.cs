@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Diagnostics;
 
 namespace TSAC
 {
@@ -13,6 +12,10 @@ namespace TSAC
 
         public void Start()
         {
+            // "\xB2" is for Squared
+            // "\x00B3" is meant to be for Cubed but doesn't show as superscript for some reason
+            // "\x03C0" is for Pi
+
             Perimeter perimeter = new Perimeter();
             Area area = new Area();
             Volume volume = new Volume();
