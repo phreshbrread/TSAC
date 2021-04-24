@@ -2,7 +2,7 @@
 
 namespace TSAC
 {
-    class Perimeter
+    class Perimeter //2D Operation
     {
         public void Main(int shape)
         {
@@ -84,7 +84,7 @@ namespace TSAC
 
             double circleCircumference = 2 * Math.PI * radius;
 
-            Console.WriteLine("2 x Pi x " + radius);
+            Console.WriteLine("2 x " + "\x03C0" + " x " + radius);
             Console.WriteLine("Circle Circumference = " + circleCircumference);
 
             Exit();
@@ -99,7 +99,8 @@ namespace TSAC
 
             double sectorCircumference = ((angle / 360) * 2 * Math.PI * radius) + 2 * radius;
 
-            Console.WriteLine("");
+            // TODO Print in readble form
+            Console.WriteLine("((angle / 360) * 2 * Math.PI * radius) + 2 * radius");
             Console.WriteLine("Sector Circumference = " + sectorCircumference);
 
             Exit();

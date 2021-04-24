@@ -2,7 +2,7 @@
 
 namespace TSAC
 {
-    class Area
+    class Area //2D Operation
     {
         public void Main(int shape)
         {
@@ -82,7 +82,7 @@ namespace TSAC
 
             double circleArea = 2 * Math.PI * radius;
 
-            Console.WriteLine("2 x Pi x " + radius);
+            Console.WriteLine("2 x " + "\x03C0" + " x " + radius);
             Console.WriteLine("Circle Area = " + circleArea);
 
             Exit();
@@ -90,6 +90,8 @@ namespace TSAC
 
         void CircleSector()
         {
+            // V = ((internal angle / 360) * 2 * Math.PI * radius) + 2 * radius
+
             Console.Write("Internal Angle: ");
             double angle = Convert.ToDouble(Console.ReadLine());
             Console.Write("Radius: ");
@@ -97,7 +99,7 @@ namespace TSAC
 
             double sectorArea = ((angle / 360) * 2 * Math.PI * radius) + 2 * radius;
 
-            Console.WriteLine("");
+            Console.WriteLine("((" + angle + " / 360) * 2 * " + "\x03C0" + " * " + radius + ") + 2 * " + radius);
             Console.WriteLine("Sector Area = " + sectorArea);
 
             Exit();
