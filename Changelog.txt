@@ -1,32 +1,39 @@
-﻿V6 - 24/04/2021
+﻿v7.0 - 28/04/2021
+- Fixed Circle Area being completely wrong.
+- Changed all ".cubed" text to "^3".
+- Swapped all Convert functions with TryParse (except in program.cs because I didn't want to).
+	- This prevents crashes without having to use try-catch which would take forever and be messy.
+	- When inputting an invalid value it will default to 0 instead of crashing.
+
+v6.0 - 24/04/2021
 - Added Rectangle-Based Pyramid Volume.
 - Added Cone Volume.
 - Added Triangular Prism TSA, not sure if it's correct though.
 - Changed & fixed some text.
 
-V5.1 - 21/04/2021
+v5.1 - 21/04/2021
 - Added Rectangle-Based Pyramid TSA.
 - Added Cone TSA.
 
-V5.0 - 30/08/2020
+v5.0 - 30/08/2020
 - Added Square-Based Pyramid Volume.
 - Added Cylinder Sector TSA.
 - Added Sphere Volume and TSA.
 - Added Hemisphere Volume and TSA.
 
-V4.0 - 29/08/2020
+v4.0 - 29/08/2020
 - Added Cube Volume.
 - Added Rectanglular Prism Volume.
 - Added Triangular Prism Volume.
 - Added exception handling for a few menus.
 
-V3.0 - 29/08/2020
+v3.0 - 29/08/2020
 - Completely rewrote most things.
 - Added Triangle Perimeter.
 
-V2.0 - 27/08/2020
+v2.0 - 27/08/2020
 - Added Area and Perimeter.
 - Redone a few things.
 
-V1.0 - 24/08/2020
+v1.0 - 24/08/2020
 - Initial release.

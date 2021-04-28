@@ -35,7 +35,7 @@ namespace TSAC
         void Square()
         {
             Console.Write("Side Length: ");
-            double side = Convert.ToDouble(Console.ReadLine());
+            Double.TryParse(Console.ReadLine(), out double side);
 
             double squarePerimeter = side * 4;
 
@@ -48,9 +48,9 @@ namespace TSAC
         void Rectangle()
         {
             Console.Write("Width: ");
-            double width = Convert.ToDouble(Console.ReadLine());
+            Double.TryParse(Console.ReadLine(), out double width);
             Console.Write("Height: ");
-            double height = Convert.ToDouble(Console.ReadLine());
+            Double.TryParse(Console.ReadLine(), out double height);
 
             double rectPerimeter = (width + height) * 2;
 
@@ -63,11 +63,11 @@ namespace TSAC
         void Triangle()
         {
             Console.Write("Side A: ");
-            double a = Convert.ToDouble(Console.ReadLine());
+            Double.TryParse(Console.ReadLine(), out double a);
             Console.Write("Side B: ");
-            double b = Convert.ToDouble(Console.ReadLine());
+            Double.TryParse(Console.ReadLine(), out double b);
             Console.Write("Side C: ");
-            double c = Convert.ToDouble(Console.ReadLine());
+            Double.TryParse(Console.ReadLine(), out double c);
 
             double triPerimeter = a + b + c;
 
@@ -80,7 +80,7 @@ namespace TSAC
         void Circle()
         {
             Console.Write("Radius: ");
-            double radius = Convert.ToDouble(Console.ReadLine());
+            Double.TryParse(Console.ReadLine(), out double radius);
 
             double circleCircumference = 2 * Math.PI * radius;
 
@@ -93,9 +93,9 @@ namespace TSAC
         void CircleSector()
         {
             Console.Write("Internal Angle: ");
-            double angle = Convert.ToDouble(Console.ReadLine());
+            Double.TryParse(Console.ReadLine(), out double angle);
             Console.Write("Radius: ");
-            double radius = Convert.ToDouble(Console.ReadLine());
+            Double.TryParse(Console.ReadLine(), out double radius);
 
             double sectorCircumference = ((angle / 360) * 2 * Math.PI * radius) + 2 * radius;
 

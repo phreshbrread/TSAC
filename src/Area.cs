@@ -35,7 +35,7 @@ namespace TSAC
         void Square()
         {
             Console.Write("Side Length: ");
-            double side = Convert.ToDouble(Console.ReadLine());
+            Double.TryParse(Console.ReadLine(), out double side);
 
             double squareArea = Math.Pow(side, 2);
 
@@ -48,9 +48,9 @@ namespace TSAC
         void Rectangle()
         {
             Console.Write("Width: ");
-            double width = Convert.ToDouble(Console.ReadLine());
+            Double.TryParse(Console.ReadLine(), out double width);
             Console.Write("Height: ");
-            double height = Convert.ToDouble(Console.ReadLine());
+            Double.TryParse(Console.ReadLine(), out double height);
 
             double rectArea = width * height;
 
@@ -63,13 +63,14 @@ namespace TSAC
         void Triangle()
         {
             Console.Write("Base: ");
-            double b = Convert.ToDouble(Console.ReadLine());
+            Double.TryParse(Console.ReadLine(), out double b);
             Console.Write("Height: ");
-            double h = Convert.ToDouble(Console.ReadLine());
+            Double.TryParse(Console.ReadLine(), out double h);
 
             double triArea = (b * h) / 2;
 
-            Console.WriteLine();
+            // TODO write in readable form
+            Console.WriteLine("(b * h) / 2");
             Console.WriteLine("Triangle Area = " + triArea);
 
             Exit();
@@ -78,11 +79,11 @@ namespace TSAC
         void Circle()
         {
             Console.Write("Radius: ");
-            double radius = Convert.ToDouble(Console.ReadLine());
+            Double.TryParse(Console.ReadLine(), out double radius);
 
-            double circleArea = 2 * Math.PI * radius;
+            double circleArea = Math.PI * Math.Pow(radius, 2);
 
-            Console.WriteLine("2 x " + "\x03C0" + " x " + radius);
+            Console.WriteLine("\x03C0" + " * " + radius + "\xB2");
             Console.WriteLine("Circle Area = " + circleArea);
 
             Exit();
@@ -93,9 +94,9 @@ namespace TSAC
             // V = ((internal angle / 360) * 2 * Math.PI * radius) + 2 * radius
 
             Console.Write("Internal Angle: ");
-            double angle = Convert.ToDouble(Console.ReadLine());
+            Double.TryParse(Console.ReadLine(), out double angle);
             Console.Write("Radius: ");
-            double radius = Convert.ToDouble(Console.ReadLine());
+            Double.TryParse(Console.ReadLine(), out double radius);
 
             double sectorArea = ((angle / 360) * 2 * Math.PI * radius) + 2 * radius;
 

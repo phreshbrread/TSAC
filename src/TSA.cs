@@ -50,7 +50,7 @@ namespace TSAC
         void Cube()
         {
             Console.Write("Side Length: ");
-            double sideLength = Convert.ToDouble(Console.ReadLine());
+            Double.TryParse(Console.ReadLine(), out double sideLength);
 
             double cubeTSA = 6 * Math.Pow(sideLength, 2);
 
@@ -63,11 +63,11 @@ namespace TSAC
         void RectPrism()
         {
             Console.Write("Width: ");
-            double width = Convert.ToDouble(Console.ReadLine());
+            Double.TryParse(Console.ReadLine(), out double width);
             Console.Write("Height: ");
-            double height = Convert.ToDouble(Console.ReadLine());
+            Double.TryParse(Console.ReadLine(), out double height);
             Console.Write("Depth: ");
-            double depth = Convert.ToDouble(Console.ReadLine());
+            Double.TryParse(Console.ReadLine(), out double depth);
 
             double rectTSA = (2 * width * height) + (2 * height * depth) + (2 * width * depth);
 
@@ -87,13 +87,13 @@ namespace TSAC
             Console.WriteLine();
 
             Console.Write("Triangular Face Base: ");
-            double b = Convert.ToDouble(Console.ReadLine());
+            Double.TryParse(Console.ReadLine(), out double b);
             Console.Write("Triangular Face Height: ");
-            double h = Convert.ToDouble(Console.ReadLine());
+            Double.TryParse(Console.ReadLine(), out double h);
             Console.Write("Object Length / Depth: ");
-            double l = Convert.ToDouble(Console.ReadLine());
+            Double.TryParse(Console.ReadLine(), out double l);
             Console.Write("Triangular Face Slant: ");
-            double s = Convert.ToDouble(Console.ReadLine());
+            Double.TryParse(Console.ReadLine(), out double s);
 
             double triTSA = (b * h) + (2 * l * s) + (l * b);
 
@@ -106,9 +106,9 @@ namespace TSAC
         void SBP() //Square-Based Pyramid
         {
             Console.Write("Trianglular Face Height: ");
-            double tfHeight = Convert.ToDouble(Console.ReadLine());
+            Double.TryParse(Console.ReadLine(), out double tfHeight);
             Console.Write("Base Width: ");
-            double baseWidth = Convert.ToDouble(Console.ReadLine());
+            Double.TryParse(Console.ReadLine(), out double baseWidth);
 
             double sbpTSA = (4 * (baseWidth * tfHeight) / 2) + Math.Pow(baseWidth, 2);
 
@@ -121,11 +121,11 @@ namespace TSAC
         void RBP() //Rectangle-Based Pyramid
         {
             Console.Write("Rectangular Base: ");
-            double lw = Convert.ToDouble(Console.ReadLine());
+            Double.TryParse(Console.ReadLine(), out double lw);
             Console.Write("Front / Back Triangle Areas: ");
-            double lh = Convert.ToDouble(Console.ReadLine());
+            Double.TryParse(Console.ReadLine(), out double lh);
             Console.Write("Side Traingle Areas: ");
-            double wh = Convert.ToDouble(Console.ReadLine());
+            Double.TryParse(Console.ReadLine(), out double wh);
 
             double rbpTSA = lw + lh + wh;
 
@@ -138,9 +138,9 @@ namespace TSAC
         void Cylinder()
         {
             Console.Write("Radius: ");
-            double radius = Convert.ToDouble(Console.ReadLine());
+            Double.TryParse(Console.ReadLine(), out double radius);
             Console.Write("Height: ");
-            double height = Convert.ToDouble(Console.ReadLine());
+            Double.TryParse(Console.ReadLine(), out double height);
 
             double cylinderTSA = 2 * Math.PI * radius * (height + radius);
 
@@ -153,11 +153,11 @@ namespace TSAC
         void CylinderSector()
         {
             Console.Write("Internal Angle: ");
-            double angle = Convert.ToDouble(Console.ReadLine());
+            Double.TryParse(Console.ReadLine(), out double angle);
             Console.Write("Radius: ");
-            double radius = Convert.ToDouble(Console.ReadLine());
+            Double.TryParse(Console.ReadLine(), out double radius);
             Console.Write("Height: ");
-            double height = Convert.ToDouble(Console.ReadLine());
+            Double.TryParse(Console.ReadLine(), out double height);
 
             double diameter = radius * 2;
             double sectTSA = (2 * (angle/360) * Math.PI * Math.Pow(radius, 2)) + ((angle/360) * Math.PI * diameter * height) + (2 * height * radius);
@@ -171,7 +171,7 @@ namespace TSAC
         void Sphere()
         {
             Console.Write("Radius: ");
-            double radius = Convert.ToDouble(Console.ReadLine());
+            Double.TryParse(Console.ReadLine(), out double radius);
 
             double sphereTSA = 4 * Math.PI * Math.Pow(radius, 2);
 
@@ -184,7 +184,7 @@ namespace TSAC
         void Hemisphere()
         {
             Console.Write("Radius: ");
-            double radius = Convert.ToDouble(Console.ReadLine());
+            Double.TryParse(Console.ReadLine(), out double radius);
 
             double hemiTSA = (4 * Math.PI * Math.Pow(radius, 2)) / 2;
 
@@ -197,9 +197,9 @@ namespace TSAC
         void Cone()
         {
             Console.Write("Base Radius: ");
-            double radius = Convert.ToDouble(Console.ReadLine());
+            Double.TryParse(Console.ReadLine(), out double radius);
             Console.Write("Slant Height: ");
-            double slant = Convert.ToDouble(Console.ReadLine());
+            Double.TryParse(Console.ReadLine(), out double slant);
 
             double coneTSA = (Math.PI * (Math.Pow(radius, 2))) + (Math.PI * radius * slant);
 
