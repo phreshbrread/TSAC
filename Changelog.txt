@@ -1,4 +1,9 @@
-﻿v7.0 - 28/04/2021
+﻿v8.0 - 30/04/2021
+- Added Pythagoras' Theorem function for triangles.
+- Changed some text.
+- Cleaned up some stuff in Program.cs
+
+v7.0 - 28/04/2021
 - Fixed Circle Area being completely wrong.
 - Changed all ".cubed" text to "^3".
 - Swapped all Convert functions with TryParse (except in program.cs because I didn't want to).
