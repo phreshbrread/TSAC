@@ -15,11 +15,13 @@ namespace TSAC
             // "\xB2" is for Squared
             // "\x00B3" is meant to be for Cubed but doesn't show as superscript for some reason
             // "\x03C0" is for Pi
+            // "\x221A" is for Square root
 
             Perimeter perimeter = new Perimeter();
             Area area = new Area();
             Volume volume = new Volume();
             TSA tsa = new TSA();
+            Pyth pyth = new Pyth();
 
             Console.Clear();
 
@@ -48,24 +50,24 @@ namespace TSAC
             shapes[13] = "Sphere";
             shapes[14] = "Hemisphere";
             shapes[15] = "Cone";
-            
 
-            // Show menu options
-            for (int i = 1; i < num1; i++)
+            for (int i = 1; i < num1; i++) // Output shapes menu
             {
-                Console.WriteLine((i+ ". ") + shapes[i]);
+                Console.WriteLine((i + ". ") + shapes[i]);
             }
 
             int shape = 0;
             try
             {
                 shape = Convert.ToInt32(Console.ReadLine());
-            } catch (OverflowException)
+            }
+            catch (OverflowException)
             {
-                InvalidOption();
-            } catch (FormatException)
+                OptionUnavailable(false);
+            }
+            catch (FormatException)
             {
-                InvalidOption();
+                OptionUnavailable(false);
             }
 
 
@@ -75,7 +77,7 @@ namespace TSAC
             }
             else
             {
-                InvalidOption();
+                OptionUnavailable(false);
             }
             #endregion
 
@@ -85,7 +87,7 @@ namespace TSAC
             Console.WriteLine("Select what to calculate");
             Console.WriteLine();
 
-            int num2 = 5;
+            int num2 = 6;
             string[] calculations = new string[num2];
 
             calculations[0] = null;
@@ -93,8 +95,9 @@ namespace TSAC
             calculations[2] = "Area";
             calculations[3] = "Volume";
             calculations[4] = "Total Surface Area";
+            calculations[5] = "Pythagoras' Theorem";
 
-            for (int i = 1; i < num2; i++)
+            for (int i = 1; i < num2; i++) // Output calculations menu
             {
                 Console.WriteLine((i + ". ") + calculations[i]);
             }
@@ -106,11 +109,11 @@ namespace TSAC
             }
             catch (OverflowException)
             {
-                InvalidOption();
+                OptionUnavailable(false);
             }
             catch (FormatException)
             {
-                InvalidOption();
+                OptionUnavailable(false);
             }
 
             if (calculate < num2 && calculate > 0)
@@ -119,7 +122,7 @@ namespace TSAC
             }
             else
             {
-                InvalidOption();
+                OptionUnavailable(false);
             }
             #endregion
 
@@ -127,34 +130,37 @@ namespace TSAC
             Console.WriteLine(calculations[calculate] + ": " + shapes[shape]);
             Console.WriteLine();
 
-            if(calculate == 1)
+            switch (calculate)
             {
-                perimeter.Main(shape);
-            }
-            if (calculate == 2)
-            {
-                area.Main(shape);
-            }
-            if (calculate == 3)
-            {
-                volume.Main(shape);
-            }
-            if (calculate == 4)
-            {
-                tsa.Main(shape);
+                case 1:
+                    perimeter.Main(shape);
+                    break;
+                case 2:
+                    area.Main(shape);   
+                    break;
+                case 3:
+                    volume.Main(shape);
+                    break;
+                case 4:
+                    tsa.Main(shape);
+                    break;
+                case 5:
+                    pyth.Main(shape);
+                    break;
             }
         }
 
-        public void InvalidOption()
+        public void OptionUnavailable(bool invalid)
         {
-            Console.WriteLine("Please select a valid option");
-            Console.ReadLine();
-            Main();
-        }
-
-        public void OptionUnavailable()
-        {
-            Console.WriteLine("Option Unavailable");
+            if (invalid == true)
+            {
+                Console.WriteLine("Please select a valid option");
+            }
+            else
+            {
+                Console.WriteLine("Option Unavailable");
+            }
+            
             Console.ReadLine();
             Main();
         }

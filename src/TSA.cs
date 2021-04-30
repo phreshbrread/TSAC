@@ -41,7 +41,7 @@ namespace TSAC
                     Cone();
                     break;
                 default:
-                    program.OptionUnavailable();
+                    program.OptionUnavailable(true);
                     break;
             }
         }
@@ -97,7 +97,7 @@ namespace TSAC
 
             double triTSA = (b * h) + (2 * l * s) + (l * b);
 
-            Console.WriteLine("(" + b + " * "  +  h + ") + (2" + " * " + l + " * " + s + ") + (" + l + " * " + b + ")");
+            Console.WriteLine("(" + b + " * " + h + ") + (2" + " * " + l + " * " + s + ") + (" + l + " * " + b + ")");
             Console.WriteLine("Triangular Prism TSA = " + triTSA);
 
             Exit();
@@ -112,7 +112,7 @@ namespace TSAC
 
             double sbpTSA = (4 * (baseWidth * tfHeight) / 2) + Math.Pow(baseWidth, 2);
 
-            Console.WriteLine("(4 x (" + baseWidth + " x " + tfHeight + ") / 2)" + " + " + "(" + baseWidth + " x " + baseWidth + ")");
+            Console.WriteLine("(4 * (" + baseWidth + " * " + tfHeight + ") / 2)" + " + " + "(" + baseWidth + " * " + baseWidth + ")");
             Console.WriteLine("SBP TSA = " + sbpTSA);
 
             Exit();
@@ -144,7 +144,7 @@ namespace TSAC
 
             double cylinderTSA = 2 * Math.PI * radius * (height + radius);
 
-            Console.WriteLine("2 x " + "\x03C0" + " x " + radius + " x " + "(" + height + " x " + radius + ")");
+            Console.WriteLine("2 * " + "\x03C0" + " * " + radius + " * " + "(" + height + " * " + radius + ")");
             Console.WriteLine("Cylinder TSA = " + cylinderTSA);
 
             Exit();
@@ -160,7 +160,7 @@ namespace TSAC
             Double.TryParse(Console.ReadLine(), out double height);
 
             double diameter = radius * 2;
-            double sectTSA = (2 * (angle/360) * Math.PI * Math.Pow(radius, 2)) + ((angle/360) * Math.PI * diameter * height) + (2 * height * radius);
+            double sectTSA = (2 * (angle / 360) * Math.PI * Math.Pow(radius, 2)) + ((angle / 360) * Math.PI * diameter * height) + (2 * height * radius);
 
             Console.WriteLine("(2 x (" + angle + " / 360) x " + "\x03C0" + " x " + radius + "²)" + " + " + "(" + angle + " / 360) x " + "\x03C0" + " x " + diameter + " x " + height + ")" + " + " + "(2 x " + height + " x " + radius + ")");
             Console.WriteLine("Sector TSA = " + sectTSA);
@@ -208,6 +208,7 @@ namespace TSAC
 
             Exit();
         }
+        #endregion
 
         void Exit()
         {
@@ -216,6 +217,5 @@ namespace TSAC
             Console.ReadKey();
             program.Start();
         }
-        #endregion
     }
 }

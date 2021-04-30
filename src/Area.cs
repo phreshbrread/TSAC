@@ -26,7 +26,7 @@ namespace TSAC
                     CircleSector();
                     break;
                 default:
-                    program.OptionUnavailable();
+                    program.OptionUnavailable(true);
                     break;
             }
         }
@@ -54,7 +54,7 @@ namespace TSAC
 
             double rectArea = width * height;
 
-            Console.WriteLine(width + " x " + height);
+            Console.WriteLine(width + " * " + height);
             Console.WriteLine("Rectangle Area = " + rectArea);
 
             Exit();
@@ -70,7 +70,7 @@ namespace TSAC
             double triArea = (b * h) / 2;
 
             // TODO write in readable form
-            Console.WriteLine("(b * h) / 2");
+            Console.WriteLine("(" + b + " * " + h + ") / 2");
             Console.WriteLine("Triangle Area = " + triArea);
 
             Exit();
@@ -105,6 +105,7 @@ namespace TSAC
 
             Exit();
         }
+        #endregion
 
         void Exit()
         {
@@ -113,6 +114,5 @@ namespace TSAC
             Console.ReadKey();
             program.Start();
         }
-        #endregion
     }
 }

@@ -26,7 +26,7 @@ namespace TSAC
                     CircleSector();
                     break;
                 default:
-                    program.OptionUnavailable();
+                    program.OptionUnavailable(true);
                     break;
             }
         }
@@ -39,7 +39,7 @@ namespace TSAC
 
             double squarePerimeter = side * 4;
 
-            Console.WriteLine(side + " x 4");
+            Console.WriteLine(side + " * 4");
             Console.WriteLine("Square Perimeter = " + squarePerimeter);
 
             Exit();
@@ -54,7 +54,7 @@ namespace TSAC
 
             double rectPerimeter = (width + height) * 2;
 
-            Console.WriteLine("(" + width + " + " + height + ")" + " x 2");
+            Console.WriteLine("(" + width + " + " + height + ")" + " * 2");
             Console.WriteLine("Rectangle Perimeter = " + rectPerimeter);
 
             Exit();
@@ -84,7 +84,7 @@ namespace TSAC
 
             double circleCircumference = 2 * Math.PI * radius;
 
-            Console.WriteLine("2 x " + "\x03C0" + " x " + radius);
+            Console.WriteLine("2 * " + "\x03C0" + " * " + radius);
             Console.WriteLine("Circle Circumference = " + circleCircumference);
 
             Exit();
@@ -99,12 +99,12 @@ namespace TSAC
 
             double sectorCircumference = ((angle / 360) * 2 * Math.PI * radius) + 2 * radius;
 
-            // TODO Print in readble form
-            Console.WriteLine("((angle / 360) * 2 * Math.PI * radius) + 2 * radius");
+            Console.WriteLine("((" + angle + " / 360) * 2 * " + "\x03C0" + " * " + radius + ") + 2 * " + radius);
             Console.WriteLine("Sector Circumference = " + sectorCircumference);
 
             Exit();
         }
+        #endregion
 
         void Exit()
         {
@@ -113,6 +113,5 @@ namespace TSAC
             Console.ReadKey();
             program.Start();
         }
-        #endregion
     }
 }
