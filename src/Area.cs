@@ -4,10 +4,10 @@ namespace TSAC
 {
     class Area //2D Operation
     {
+        Program program = new Program();
+        
         public void Main(int shape)
         {
-            Program program = new Program();
-
             switch (shape)
             {
                 case 1:
@@ -31,7 +31,6 @@ namespace TSAC
             }
         }
 
-        #region Shapes
         void Square()
         {
             Console.Write("Side Length: ");
@@ -40,9 +39,9 @@ namespace TSAC
             double squareArea = Math.Pow(side, 2);
 
             Console.WriteLine(side + "\xB2");
-            Console.WriteLine("Square Area = " + squareArea);
+            Console.WriteLine("Square Area = ");
 
-            Exit();
+            program.Restart(squareArea);
         }
 
         void Rectangle()
@@ -55,9 +54,9 @@ namespace TSAC
             double rectArea = width * height;
 
             Console.WriteLine(width + " * " + height);
-            Console.WriteLine("Rectangle Area = " + rectArea);
+            Console.WriteLine("Rectangle Area = ");
 
-            Exit();
+            program.Restart(rectArea);
         }
 
         void Triangle()
@@ -69,11 +68,10 @@ namespace TSAC
 
             double triArea = (b * h) / 2;
 
-            // TODO write in readable form
             Console.WriteLine("(" + b + " * " + h + ") / 2");
-            Console.WriteLine("Triangle Area = " + triArea);
+            Console.WriteLine("Triangle Area = ");
 
-            Exit();
+            program.Restart(triArea);
         }
 
         void Circle()
@@ -84,9 +82,9 @@ namespace TSAC
             double circleArea = Math.PI * Math.Pow(radius, 2);
 
             Console.WriteLine("\x03C0" + " * " + radius + "\xB2");
-            Console.WriteLine("Circle Area = " + circleArea);
+            Console.WriteLine("Circle Area = ");
 
-            Exit();
+            program.Restart(circleArea);
         }
 
         void CircleSector()
@@ -101,18 +99,9 @@ namespace TSAC
             double sectorArea = ((angle / 360) * 2 * Math.PI * radius) + 2 * radius;
 
             Console.WriteLine("((" + angle + " / 360) * 2 * " + "\x03C0" + " * " + radius + ") + 2 * " + radius);
-            Console.WriteLine("Sector Area = " + sectorArea);
+            Console.WriteLine("Sector Area = ");
 
-            Exit();
-        }
-        #endregion
-
-        void Exit()
-        {
-            Program program = new Program();
-
-            Console.ReadKey();
-            program.Start();
+            program.Restart(sectorArea);
         }
     }
 }
