@@ -4,10 +4,10 @@ namespace TSAC
 {
     class Perimeter //2D Operation
     {
+        Program program = new Program();
+
         public void Main(int shape)
         {
-            Program program = new Program();
-
             switch (shape)
             {
                 case 1:
@@ -31,7 +31,6 @@ namespace TSAC
             }
         }
 
-        #region Shapes
         void Square()
         {
             Console.Write("Side Length: ");
@@ -40,9 +39,9 @@ namespace TSAC
             double squarePerimeter = side * 4;
 
             Console.WriteLine(side + " * 4");
-            Console.WriteLine("Square Perimeter = " + squarePerimeter);
+            Console.Write("Square Perimeter = ");
 
-            Exit();
+            program.Restart(squarePerimeter);
         }
 
         void Rectangle()
@@ -55,9 +54,9 @@ namespace TSAC
             double rectPerimeter = (width + height) * 2;
 
             Console.WriteLine("(" + width + " + " + height + ")" + " * 2");
-            Console.WriteLine("Rectangle Perimeter = " + rectPerimeter);
+            Console.WriteLine("Rectangle Perimeter = ");
 
-            Exit();
+            program.Restart(rectPerimeter);
         }
 
         void Triangle()
@@ -72,9 +71,9 @@ namespace TSAC
             double triPerimeter = a + b + c;
 
             Console.WriteLine(a + " + " + b + " + " + c);
-            Console.WriteLine("Triangle Perimeter = " + triPerimeter);
+            Console.WriteLine("Triangle Perimeter = ");
 
-            Exit();
+            program.Restart(triPerimeter);
         }
 
         void Circle()
@@ -85,9 +84,9 @@ namespace TSAC
             double circleCircumference = 2 * Math.PI * radius;
 
             Console.WriteLine("2 * " + "\x03C0" + " * " + radius);
-            Console.WriteLine("Circle Circumference = " + circleCircumference);
+            Console.WriteLine("Circle Circumference = ");
 
-            Exit();
+            program.Restart(circleCircumference);
         }
 
         void CircleSector()
@@ -100,18 +99,9 @@ namespace TSAC
             double sectorCircumference = ((angle / 360) * 2 * Math.PI * radius) + 2 * radius;
 
             Console.WriteLine("((" + angle + " / 360) * 2 * " + "\x03C0" + " * " + radius + ") + 2 * " + radius);
-            Console.WriteLine("Sector Circumference = " + sectorCircumference);
+            Console.WriteLine("Sector Circumference = ");
 
-            Exit();
-        }
-        #endregion
-
-        void Exit()
-        {
-            Program program = new Program();
-
-            Console.ReadKey();
-            program.Start();
+            program.Restart(sectorCircumference);
         }
     }
 }

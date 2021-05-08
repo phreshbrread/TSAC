@@ -1,4 +1,9 @@
-﻿v8.0 - 30/04/2021
+﻿v8.1 - 08/05/2021
+- Made Pyth slightly cleaner and more efficient.
+- Replaced all Convert functions with TryParse in Program.cs
+- Cleaned up some more functions.
+
+v8.0 - 30/04/2021
 - Added Pythagoras' Theorem function for triangles.
 - Changed some text.
 - Cleaned up some stuff in Program.cs

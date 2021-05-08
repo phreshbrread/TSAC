@@ -4,6 +4,15 @@ namespace TSAC
 {
     class Program
     {
+        public int calculate;
+        public int shape;
+
+        static int num1 = 16;
+        string[] shapes = new string[num1];
+
+        static int num2 = 6;
+        public string[] calculations = new string[num2];
+
         static void Main()
         {
             Program program = new Program();
@@ -28,10 +37,7 @@ namespace TSAC
             #region Shapes Menu
             Console.WriteLine("Select shape");
             Console.WriteLine();
-
-            int num1 = 16;
-            string[] shapes = new string[num1];
-
+            
             // 2D Shapes
             shapes[0] = null;
             shapes[1] = "Square";
@@ -56,20 +62,11 @@ namespace TSAC
                 Console.WriteLine((i + ". ") + shapes[i]);
             }
 
-            int shape = 0;
-            try
-            {
-                shape = Convert.ToInt32(Console.ReadLine());
-            }
-            catch (OverflowException)
+            Int32.TryParse(Console.ReadLine(), out shape);
+            if (shape == 0)
             {
                 OptionUnavailable(false);
             }
-            catch (FormatException)
-            {
-                OptionUnavailable(false);
-            }
-
 
             if (shape < num1 && shape > 0)
             {
@@ -87,9 +84,6 @@ namespace TSAC
             Console.WriteLine("Select what to calculate");
             Console.WriteLine();
 
-            int num2 = 6;
-            string[] calculations = new string[num2];
-
             calculations[0] = null;
             calculations[1] = "Perimeter";
             calculations[2] = "Area";
@@ -102,16 +96,8 @@ namespace TSAC
                 Console.WriteLine((i + ". ") + calculations[i]);
             }
 
-            int calculate = 0;
-            try
-            {
-                calculate = Convert.ToInt32(Console.ReadLine());
-            }
-            catch (OverflowException)
-            {
-                OptionUnavailable(false);
-            }
-            catch (FormatException)
+            Int32.TryParse(Console.ReadLine(), out calculate);
+            if (calculate == 0)
             {
                 OptionUnavailable(false);
             }
@@ -136,7 +122,7 @@ namespace TSAC
                     perimeter.Main(shape);
                     break;
                 case 2:
-                    area.Main(shape);   
+                    area.Main(shape);
                     break;
                 case 3:
                     volume.Main(shape);
@@ -160,9 +146,19 @@ namespace TSAC
             {
                 Console.WriteLine("Option Unavailable");
             }
-            
+
+            Restart(0, false); // Use this to restart without printing a result
+        }
+
+        public void Restart(double result, bool i = true)
+        {
+            if (i == true)
+            {
+                Console.WriteLine(result);
+            }
+
             Console.ReadLine();
-            Main();
+            Start();
         }
     }
 }
