@@ -39,7 +39,6 @@ namespace TSAC
             double squareArea = Math.Pow(side, 2);
 
             Console.WriteLine(side + "\xB2");
-            Console.WriteLine("Square Area = ");
 
             program.Restart(squareArea);
         }
@@ -54,7 +53,6 @@ namespace TSAC
             double rectArea = width * height;
 
             Console.WriteLine(width + " * " + height);
-            Console.WriteLine("Rectangle Area = ");
 
             program.Restart(rectArea);
         }
@@ -69,7 +67,6 @@ namespace TSAC
             double triArea = (b * h) / 2;
 
             Console.WriteLine("(" + b + " * " + h + ") / 2");
-            Console.WriteLine("Triangle Area = ");
 
             program.Restart(triArea);
         }
@@ -82,7 +79,6 @@ namespace TSAC
             double circleArea = Math.PI * Math.Pow(radius, 2);
 
             Console.WriteLine("\x03C0" + " * " + radius + "\xB2");
-            Console.WriteLine("Circle Area = ");
 
             program.Restart(circleArea);
         }
@@ -99,7 +95,6 @@ namespace TSAC
             double sectorArea = ((angle / 360) * 2 * Math.PI * radius) + 2 * radius;
 
             Console.WriteLine("((" + angle + " / 360) * 2 * " + "\x03C0" + " * " + radius + ") + 2 * " + radius);
-            Console.WriteLine("Sector Area = ");
 
             program.Restart(sectorArea);
         }

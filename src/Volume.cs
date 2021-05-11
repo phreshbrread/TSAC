@@ -54,7 +54,6 @@ namespace TSAC
             double cubeVolume = Math.Pow(sideLength, 3);
 
             Console.WriteLine(sideLength + "^3");
-            Console.WriteLine("Cube Volume = ");
 
             program.Restart(cubeVolume);
         }
@@ -71,7 +70,6 @@ namespace TSAC
             double rectVolume = depth * width * height;
 
             Console.WriteLine(depth + " * " + width + " * " + height);
-            Console.WriteLine("Rectanglular Prism Volume = ");
 
             program.Restart(rectVolume);
         }
@@ -88,7 +86,6 @@ namespace TSAC
             double rectVolume = (baseL * height * length) / 2;
 
             Console.WriteLine("(" + baseL + " * " + height + " * " + length + ") / 2");
-            Console.WriteLine("Triangular Prism Volume = ");
 
             program.Restart(rectVolume);
         }
@@ -103,7 +100,6 @@ namespace TSAC
             double sbpVolume = Math.Pow(baseEdge, 2) * (height / 3);
 
             Console.WriteLine(baseEdge + "\xB2" + " * (" + height + " / 3)");
-            Console.WriteLine("SBP Volume = ");
 
             program.Restart(sbpVolume);
         }
@@ -120,7 +116,6 @@ namespace TSAC
             double rbpVolume = (length * width * height) / 3;
 
             Console.WriteLine("(" + length + " * " + width + " * " + height + ") / 3");
-            Console.WriteLine("RBP Volume = ");
 
             program.Restart(rbpVolume);
         }
@@ -135,7 +130,6 @@ namespace TSAC
             double cylinderVolume = Math.PI * (radius * radius) * height;
 
             Console.WriteLine("\x03C0" + " * " + radius + " * " + radius + " * " + height);
-            Console.WriteLine("Cylinder Volume = ");
 
             program.Restart(cylinderVolume);
         }
@@ -152,7 +146,6 @@ namespace TSAC
             double sectVolume = (angle / 360) * Math.PI * Math.Pow(radius, 2) * height;
 
             Console.WriteLine("(" + angle + " / 360) * " + "\x03C0" + " * " + radius + "\xB2" + " * " + height);
-            Console.WriteLine("Cylinder Volume = ");
 
             program.Restart(sectVolume);
         }
@@ -165,7 +158,6 @@ namespace TSAC
             double sphereVolume = (4 * Math.PI * Math.Pow(radius, 3)) / 3;
 
             Console.WriteLine("(4 * " + "\x03C0" + " * " + radius + "^3" + ") / 3");
-            Console.WriteLine("Sphere Volume = ");
 
             program.Restart(sphereVolume);
         }
@@ -178,7 +170,6 @@ namespace TSAC
             double hemiVolume = (4 * Math.PI * Math.Pow(radius, 3) / 3) / 2;
 
             Console.WriteLine("((4 * " + "\x03C0" + " * " + radius + "^3" + ") / 3) / 2");
-            Console.WriteLine("Sphere Volume = ");
 
             program.Restart(hemiVolume);
         }
@@ -195,7 +186,6 @@ namespace TSAC
             double coneVolume = Math.PI * Math.Pow(radius, 2) * (height / 3);
 
             Console.WriteLine("\x03C0" + " * " + radius + "\xB2" + " * " + "(" + height + " / 3)");
-            Console.WriteLine("Cone Volume = ");
 
             program.Restart(coneVolume);
         }

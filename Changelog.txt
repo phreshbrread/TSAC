@@ -1,4 +1,8 @@
-﻿v8.1 - 08/05/2021
+﻿v8.2 - 11/05/2021
+- Cleaned up some more things and unified more functions.
+- Renamed some variables for easier reading.
+
+v8.1 - 08/05/2021
 - Made Pyth slightly cleaner and more efficient.
 - Replaced all Convert functions with TryParse in Program.cs
 - Cleaned up some more functions.

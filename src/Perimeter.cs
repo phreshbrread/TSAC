@@ -39,7 +39,6 @@ namespace TSAC
             double squarePerimeter = side * 4;
 
             Console.WriteLine(side + " * 4");
-            Console.Write("Square Perimeter = ");
 
             program.Restart(squarePerimeter);
         }
@@ -54,7 +53,6 @@ namespace TSAC
             double rectPerimeter = (width + height) * 2;
 
             Console.WriteLine("(" + width + " + " + height + ")" + " * 2");
-            Console.WriteLine("Rectangle Perimeter = ");
 
             program.Restart(rectPerimeter);
         }
@@ -71,7 +69,6 @@ namespace TSAC
             double triPerimeter = a + b + c;
 
             Console.WriteLine(a + " + " + b + " + " + c);
-            Console.WriteLine("Triangle Perimeter = ");
 
             program.Restart(triPerimeter);
         }
@@ -84,7 +81,6 @@ namespace TSAC
             double circleCircumference = 2 * Math.PI * radius;
 
             Console.WriteLine("2 * " + "\x03C0" + " * " + radius);
-            Console.WriteLine("Circle Circumference = ");
 
             program.Restart(circleCircumference);
         }
@@ -99,7 +95,6 @@ namespace TSAC
             double sectorCircumference = ((angle / 360) * 2 * Math.PI * radius) + 2 * radius;
 
             Console.WriteLine("((" + angle + " / 360) * 2 * " + "\x03C0" + " * " + radius + ") + 2 * " + radius);
-            Console.WriteLine("Sector Circumference = ");
 
             program.Restart(sectorCircumference);
         }

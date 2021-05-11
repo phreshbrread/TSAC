@@ -54,7 +54,6 @@ namespace TSAC
             double cubeTSA = 6 * Math.Pow(sideLength, 2);
 
             Console.WriteLine("6 x " + sideLength + "\xB2");
-            Console.WriteLine("Cube TSA = ");
 
             program.Restart(cubeTSA);
         }
@@ -71,7 +70,6 @@ namespace TSAC
             double rectTSA = (2 * width * height) + (2 * height * depth) + (2 * width * depth);
 
             Console.WriteLine("(2 x " + width + " x " + height + ")" + " + " + "(2 x " + height + " x " + depth + ")" + " + " + "(2 x " + width + " x " + depth + ")");
-            Console.WriteLine("Rectangle TSA = ");
 
             program.Restart(rectTSA);
         }
@@ -97,7 +95,6 @@ namespace TSAC
             double triTSA = (b * h) + (2 * l * s) + (l * b);
 
             Console.WriteLine("(" + b + " * " + h + ") + (2" + " * " + l + " * " + s + ") + (" + l + " * " + b + ")");
-            Console.WriteLine("Triangular Prism TSA = ");
 
             program.Restart(triTSA);
         }
@@ -112,7 +109,6 @@ namespace TSAC
             double sbpTSA = (4 * (baseWidth * tfHeight) / 2) + Math.Pow(baseWidth, 2);
 
             Console.WriteLine("(4 * (" + baseWidth + " * " + tfHeight + ") / 2)" + " + " + "(" + baseWidth + " * " + baseWidth + ")");
-            Console.WriteLine("SBP TSA = ");
 
             program.Restart(sbpTSA);
         }
@@ -129,7 +125,6 @@ namespace TSAC
             double rbpTSA = lw + lh + wh;
 
             Console.WriteLine(lw + " + " + lh + " + " + wh);
-            Console.WriteLine("RBP TSA = ");
 
             program.Restart(rbpTSA);
         }
@@ -144,7 +139,6 @@ namespace TSAC
             double cylinderTSA = 2 * Math.PI * radius * (height + radius);
 
             Console.WriteLine("2 * " + "\x03C0" + " * " + radius + " * " + "(" + height + " * " + radius + ")");
-            Console.WriteLine("Cylinder TSA = ");
 
             program.Restart(cylinderTSA);
         }
@@ -162,7 +156,6 @@ namespace TSAC
             double sectTSA = (2 * (angle / 360) * Math.PI * Math.Pow(radius, 2)) + ((angle / 360) * Math.PI * diameter * height) + (2 * height * radius);
 
             Console.WriteLine("(2 x (" + angle + " / 360) x " + "\x03C0" + " x " + radius + "²)" + " + " + "(" + angle + " / 360) x " + "\x03C0" + " x " + diameter + " x " + height + ")" + " + " + "(2 x " + height + " x " + radius + ")");
-            Console.WriteLine("Sector TSA = ");
 
             program.Restart(sectTSA);
         }
@@ -175,7 +168,6 @@ namespace TSAC
             double sphereTSA = 4 * Math.PI * Math.Pow(radius, 2);
 
             Console.WriteLine("4 x " + "\x03C0" + " x " + radius + "\xB2");
-            Console.WriteLine("Sphere Volume = ");
 
             program.Restart(sphereTSA);
         }
@@ -188,7 +180,6 @@ namespace TSAC
             double hemiTSA = (4 * Math.PI * Math.Pow(radius, 2)) / 2;
 
             Console.WriteLine("(4 x " + "\x03C0" + " x " + radius + "\xB2) / 2");
-            Console.WriteLine("Sphere Volume = ");
 
             program.Restart(hemiTSA);
         }
@@ -203,7 +194,6 @@ namespace TSAC
             double coneTSA = (Math.PI * (Math.Pow(radius, 2))) + (Math.PI * radius * slant);
 
             Console.WriteLine("(" + "\x03C0" + " * (" + radius + "\xB2" + ")) + " + "\x03C0" + " * " + radius + " * " + slant);
-            Console.WriteLine("Cone TSA = ");
 
             program.Restart(coneTSA);
         }

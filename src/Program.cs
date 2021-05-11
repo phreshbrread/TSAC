@@ -4,14 +4,16 @@ namespace TSAC
 {
     class Program
     {
-        public int calculate;
+        public int whatToCalculate;
         public int shape;
 
-        static int num1 = 16;
-        string[] shapes = new string[num1];
+        static int shapeMenuLength = 16;
+        public string[] shapeMenu = new string[shapeMenuLength];
 
-        static int num2 = 6;
-        public string[] calculations = new string[num2];
+        static int calcMenuLength = 6;
+        public string[] calculationMenu = new string[calcMenuLength];
+
+        static string shapeAndCalc = null;
 
         static void Main()
         {
@@ -37,46 +39,37 @@ namespace TSAC
             #region Shapes Menu
             Console.WriteLine("Select shape");
             Console.WriteLine();
-            
+
             // 2D Shapes
-            shapes[0] = null;
-            shapes[1] = "Square";
-            shapes[2] = "Rectangle";
-            shapes[3] = "Triangle";
-            shapes[4] = "Circle";
-            shapes[5] = "Circle Sector";
+            shapeMenu[0] = null;
+            shapeMenu[1] = "Square";
+            shapeMenu[2] = "Rectangle";
+            shapeMenu[3] = "Triangle";
+            shapeMenu[4] = "Circle";
+            shapeMenu[5] = "Circle Sector";
             // 3D Shapes
-            shapes[6] = "Cube";
-            shapes[7] = "Rectangular Prism";
-            shapes[8] = "Triangular Prism";
-            shapes[9] = "Square-Based Pyramid";
-            shapes[10] = "Rectangle-Based Pyramid";
-            shapes[11] = "Cylinder";
-            shapes[12] = "Cylinder Sector";
-            shapes[13] = "Sphere";
-            shapes[14] = "Hemisphere";
-            shapes[15] = "Cone";
+            shapeMenu[6] = "Cube";
+            shapeMenu[7] = "Rectangular Prism";
+            shapeMenu[8] = "Triangular Prism";
+            shapeMenu[9] = "Square-Based Pyramid";
+            shapeMenu[10] = "Rectangle-Based Pyramid";
+            shapeMenu[11] = "Cylinder";
+            shapeMenu[12] = "Cylinder Sector";
+            shapeMenu[13] = "Sphere";
+            shapeMenu[14] = "Hemisphere";
+            shapeMenu[15] = "Cone";
 
-            for (int i = 1; i < num1; i++) // Output shapes menu
+            for (int i = 1; i < shapeMenuLength; i++) // Output shapes menu
             {
-                Console.WriteLine((i + ". ") + shapes[i]);
-            }
-
-            Int32.TryParse(Console.ReadLine(), out shape);
-            if (shape == 0)
-            {
-                OptionUnavailable(false);
-            }
-
-            if (shape < num1 && shape > 0)
-            {
-                // Continue
-            }
-            else
-            {
-                OptionUnavailable(false);
+                Console.WriteLine((i + ". ") + shapeMenu[i]);
             }
             #endregion
+
+            Int32.TryParse(Console.ReadLine(), out shape);
+            if (shape > shapeMenuLength && shape <= 0)
+            {
+                OptionUnavailable(false);
+            }
 
             Console.WriteLine();
 
@@ -84,39 +77,34 @@ namespace TSAC
             Console.WriteLine("Select what to calculate");
             Console.WriteLine();
 
-            calculations[0] = null;
-            calculations[1] = "Perimeter";
-            calculations[2] = "Area";
-            calculations[3] = "Volume";
-            calculations[4] = "Total Surface Area";
-            calculations[5] = "Pythagoras' Theorem";
+            calculationMenu[0] = null;
+            calculationMenu[1] = "Perimeter";
+            calculationMenu[2] = "Area";
+            calculationMenu[3] = "Volume";
+            calculationMenu[4] = "Total Surface Area";
+            calculationMenu[5] = "Pythagoras' Theorem";
 
-            for (int i = 1; i < num2; i++) // Output calculations menu
-            {
-                Console.WriteLine((i + ". ") + calculations[i]);
-            }
 
-            Int32.TryParse(Console.ReadLine(), out calculate);
-            if (calculate == 0)
+            for (int i = 1; i < calcMenuLength; i++) // Output calculations menu
             {
-                OptionUnavailable(false);
-            }
-
-            if (calculate < num2 && calculate > 0)
-            {
-                // Continue
-            }
-            else
-            {
-                OptionUnavailable(false);
+                Console.WriteLine((i + ". ") + calculationMenu[i]);
             }
             #endregion
 
+            Int32.TryParse(Console.ReadLine(), out whatToCalculate);
+            if (whatToCalculate > calcMenuLength && whatToCalculate <= 0)
+            {
+                OptionUnavailable(false);
+            }
+
             Console.Clear();
-            Console.WriteLine(calculations[calculate] + ": " + shapes[shape]);
+            Console.WriteLine(calculationMenu[whatToCalculate] + ": " + shapeMenu[shape]);
+
+            shapeAndCalc = shapeMenu[shape] + " " + calculationMenu[whatToCalculate];
+
             Console.WriteLine();
 
-            switch (calculate)
+            switch (whatToCalculate)
             {
                 case 1:
                     perimeter.Main(shape);
@@ -153,8 +141,9 @@ namespace TSAC
         public void Restart(double result, bool i = true)
         {
             if (i == true)
-            {
-                Console.WriteLine(result);
+            { // TODO automate this shid
+                //Console.WriteLine(result);
+                Console.WriteLine(shapeAndCalc + " = " + result);
             }
 
             Console.ReadLine();

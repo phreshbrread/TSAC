@@ -35,6 +35,8 @@ namespace TSAC
             Double.TryParse(input2, out double b);
             Double.TryParse(input3, out double c);
 
+            Console.WriteLine();
+
             if (input1 == "?")
             {
                 a = Math.Sqrt(Math.Pow(c, 2) - Math.Pow(b, 2));
