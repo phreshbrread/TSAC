@@ -41,7 +41,7 @@ namespace TSAC
                     Cone();
                     break;
                 default:
-                    program.OptionUnavailable(true);
+                    program.OptionUnavailable(false);
                     break;
             }
         }
