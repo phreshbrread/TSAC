@@ -1,11 +1,9 @@
-﻿v8.4
+﻿v9.0 - 26/05/2021
+- Changed the way values are added to the arrays for cleaner code.
+- Fixed some small code errors preventing things from happening when they should.
 - Cleaned up some more stuff.
 - Fixed up some incorrect text.
 - Pythagoras' Theorem option no longer shows if anything but triangle is selected.
-
-v8.3 - 14/05/2021
-- Changed the way values are added to the arrays for cleaner code.
-- Fixed some small code errors preventing things from happening when they should.
 
 v8.2 - 11/05/2021
 - Cleaned up some more things and unified more functions.
