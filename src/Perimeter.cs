@@ -26,7 +26,7 @@ namespace TSAC
                     CircleSector();
                     break;
                 default:
-                    program.OptionUnavailable(true);
+                    program.OptionUnavailable(false);
                     break;
             }
         }

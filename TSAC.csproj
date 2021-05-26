@@ -48,7 +48,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestCertificateThumbprint>31402761C3BEA1307C2C155D754EAF35BB0C1CC2</ManifestCertificateThumbprint>
@@ -73,6 +73,7 @@
     <Compile Include="src\Perimeter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="src\Program.cs" />
+    <Compile Include="src\Pyth.cs" />
     <Compile Include="src\TSA.cs" />
     <Compile Include="src\Volume.cs" />
   </ItemGroup>
@@ -93,7 +94,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Changelog.txt" />
-    <Content Include="Todo.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

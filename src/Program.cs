@@ -7,11 +7,12 @@ namespace TSAC
         public int whatToCalculate;
         public int shape;
 
-        static int shapeMenuLength = 16;
-        public string[] shapeMenu = new string[shapeMenuLength];
+        public string[] shapeMenu = {null,"Square","Rectangle","Triangle","Circle","Circle Sector",
+                "Cube", "Rectangular Prism", "Triangular Prism", "Square-Based Pyramid",
+                "Rectangle-Based Pyramid", "Cylinder", "Cylinder Sector", "Sphere", "Hemisphere", "Cone"};
 
-        static int calcMenuLength = 6;
-        public string[] calculationMenu = new string[calcMenuLength];
+        public string[] calculationMenu = {null, "Perimeter", "Area", "Volume",
+                "Total Surface Area", "Pythagoras' Theorem"};
 
         static string shapeAndCalc = null;
 
@@ -40,35 +41,17 @@ namespace TSAC
             Console.WriteLine("Select shape");
             Console.WriteLine();
 
-            // 2D Shapes
-            shapeMenu[0] = null;
-            shapeMenu[1] = "Square";
-            shapeMenu[2] = "Rectangle";
-            shapeMenu[3] = "Triangle";
-            shapeMenu[4] = "Circle";
-            shapeMenu[5] = "Circle Sector";
-            // 3D Shapes
-            shapeMenu[6] = "Cube";
-            shapeMenu[7] = "Rectangular Prism";
-            shapeMenu[8] = "Triangular Prism";
-            shapeMenu[9] = "Square-Based Pyramid";
-            shapeMenu[10] = "Rectangle-Based Pyramid";
-            shapeMenu[11] = "Cylinder";
-            shapeMenu[12] = "Cylinder Sector";
-            shapeMenu[13] = "Sphere";
-            shapeMenu[14] = "Hemisphere";
-            shapeMenu[15] = "Cone";
 
-            for (int i = 1; i < shapeMenuLength; i++) // Output shapes menu
+            for (int i = 1; i < shapeMenu.Length; i++) // Output shapes menu
             {
                 Console.WriteLine((i + ". ") + shapeMenu[i]);
             }
             #endregion
 
             Int32.TryParse(Console.ReadLine(), out shape);
-            if (shape > shapeMenuLength && shape <= 0)
+            if (shape > shapeMenu.Length || shape <= 0)
             {
-                OptionUnavailable(false);
+                OptionUnavailable(true);
             }
 
             Console.WriteLine();
@@ -77,24 +60,22 @@ namespace TSAC
             Console.WriteLine("Select what to calculate");
             Console.WriteLine();
 
-            calculationMenu[0] = null;
-            calculationMenu[1] = "Perimeter";
-            calculationMenu[2] = "Area";
-            calculationMenu[3] = "Volume";
-            calculationMenu[4] = "Total Surface Area";
-            calculationMenu[5] = "Pythagoras' Theorem";
+            int e = 5;
+            if (shape == 3)
+            {
+                e = 6;
+            }
 
-
-            for (int i = 1; i < calcMenuLength; i++) // Output calculations menu
+            for (int i = 1; i < e; i++) // Output calculations menu
             {
                 Console.WriteLine((i + ". ") + calculationMenu[i]);
             }
             #endregion
 
             Int32.TryParse(Console.ReadLine(), out whatToCalculate);
-            if (whatToCalculate > calcMenuLength && whatToCalculate <= 0)
+            if (whatToCalculate > calculationMenu.Length || whatToCalculate <= 0 || (shape != 3 && whatToCalculate == 5))
             {
-                OptionUnavailable(false);
+                OptionUnavailable(true);
             }
 
             Console.Clear();
@@ -121,6 +102,9 @@ namespace TSAC
                 case 5:
                     pyth.Main(shape);
                     break;
+                default:
+                    OptionUnavailable(true);
+                    break;
             }
         }
 
@@ -135,14 +119,13 @@ namespace TSAC
                 Console.WriteLine("Option Unavailable");
             }
 
-            Restart(0, false); // Use this to restart without printing a result
+            Restart(0, false); // Restart without printing a result
         }
 
         public void Restart(double result, bool i = true)
         {
             if (i == true)
-            { // TODO automate this shid
-                //Console.WriteLine(result);
+            {
                 Console.WriteLine(shapeAndCalc + " = " + result);
             }
 
